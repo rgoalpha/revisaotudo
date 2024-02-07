@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #221721;
+    color: #fff;
+}
+
+/* ----MENU SUPERIOR---- */
+.ftop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    background: #f01c1c;
+    width: 100%;
+    padding: 20px 10% ;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+}
+
+.ftop .logo {
+    text-decoration: none;
+    font-family: "Kreon";
+    font-size: 36px;
+    font-weight: 700;
+    pointer-events: none;
+    color: #fff;
+}
+
+.navbar a{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    margin: 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    background: linear-gradient(90deg, #fff, #000000);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+/* ----MENU SUPERIOR---- */
+
+.conteiner {
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 70px 10% 0;
+    flex-direction: column;
+}
+
+/*----------- PT1----------- */
+
+.carrosel {
+    display: flex;
+    width: 1100px;
+    height: 350px;
+    margin: 20px 40px;
+    justify-content: space-between;
+}
+
+.home-img{
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatImg 4s ease-in-out infinite;
+    animation-delay: 2.1s, 3.1s;
+}
+
+.home-img .img-blur {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img .img-blur::after{
+    content: '';
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.img-blur span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ff0000,#000000);
+    border-radius: 50%;
+    animation: circRotate 3s linear infinite;
+}
+
+.img-blur span:nth-child(1){
+    filter: blur(10px);
+}
+
+.img-blur .imagem {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    z-index: 1;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.imagem img {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    object-fit: cover;
+}
+
+.artigo {
+    width:780px;
+    background: red;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    opacity: 0;
+    animation: slideEsq 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.artigo h2{
+    margin: 20px;
+    text-align: center;
+}
+
+.artigo p{
+    align-items: center;
+    text-align: justify;
+    margin: 0 10px 20px 20px;
+}
+/*----------- PT1----------- */
+
+
+/*----------- PT2----------- */
+.recomenda{
+    margin: 15px 0;
+    background: red;
+    width: 1100px;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 3.5s;
+}
+.recomenda h2{
+    text-align: center;
+    margin: 2%;
+    font-weight: 600;
+}
+
+.section{
+    overflow: hidden;
+}
+
+#livro1{
+    float: left;
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+#livro1 a{
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+#livro1 a:hover {
+    background: linear-gradient(50deg, #fff,#000);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+
+#livro2{
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+#livro2 a{
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+#livro2 a:hover {
+    background: linear-gradient(50deg, #fff,#000);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+
+.rec-img{
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+}
+
+.rec-img img {
+    width: 300px;
+    height: 350px;
+    border-radius: 5px;
+}
+
+/* --------------- Animação ---------- */
+
+@keyframes slideTop {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes slideEsq {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes circRotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
